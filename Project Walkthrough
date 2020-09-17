@@ -1,0 +1,37 @@
+# Project Walkthrough and errors:
+
+•	Prefect requires graphviz to outputting graph which runs on python 3.6. 
+	Environment had to be installed with python version 3.6
+•	After cloning the git repository spend time trying to download nii files
+	from bit torrent link via aria2c. Multiple failures. Then manually download the files. 
+	Could not use pidycom as files were in nii so had to install nibabel.
+•	Realised tags were private, tried to access them then informed you. Task removed.
+•	Assumed project has to be run on server but should be accessible from anywhere. 
+	Configured jupyter notebook via port forwarding to be accessed from local laptop. 
+	The concept was new to me and I didn’t realise ports were not opened. 
+	After trying various different experiments realised port is closed. Informed you but burnt a lot of 		time.
+•	Server kept dying when I used jupyter notebook from local computer via web browser. 
+	No prior experience in mobaxterm/ssh tunnelling so tried to set up config file to keep server alive.
+	Later figured how to keep it alive via mobaxterm.
+•	Getting the automation graph to include retries, failure handling ,upstreaming task, scheduling,
+	passing code to terminal, trying terminal commands for the first time- consumed a bit of time.
+•	Validating task flow to realise purging not implemented properly. Command lines to purge had 
+	to be altered multiple times as any output apart from code 1 is considered as failure by prefect.
+•	Lost an entire session as I thought I committed properly but something went wrong. Reason unknown.
+•	Prefect server failed due to docker issue. Installed docker and docker compose. 
+	When retrying task failed again as permission was denied.
+	Fixed docker compose’s permission for non sudo user access. 
+•	Server could not start as default port was set to 8080. Figured config for changing port. Once the UI
+	was up could not connect to graphql API. Without graphql GUI was unable to config to our flow. Asked you
+	to activate 4200 but still not able to solve issue. Spend more than a day reading forums and checking 
+	various configs. Pinged on slack who help figure the issue. Turns out 4200 is most likely not open. 
+	I didn’t recheck at first because you confirmed to open it. Later figured how to change config for graphql. 
+	It connected to prefect server but page loading issue. Awaiting reply from the prefect community.
+•	Testing of code with scheduler, what happens if folder structure is changed or delete or not existing. 
+	Incorporated changes in code
+•	Documentation of readme.md
+•	Documentation of project report
+Note: Minor deviations from instructions to showcase functionality. Eg- using jupyter notebook instead of
+single python file. Creation of extra files in result.
+
+
