@@ -69,8 +69,14 @@ prefect backend server
 prefect server start
 ```
 go to your browser and enter http:<your_IP_Address>:8080 and you shall be logged onto the prefect UI.
+#### Starting an Agent
+An agent facilitates when a flow is run. To start a agent enter the following lines in terminal
+```
+prefect backend server
+prefect agent start
+```
 #### Register
-Register the flow (last line in main.ipynb) and you can then run the flow from the UI
+Register the flow (last line in Main.ipynb) and you can then run the flow from the UI
 #### License
 Each image has license specified in the metadata.csv file. Including Apache 2.0, CC BY-NC-SA 4.0, CC BY 4.0.
 The metadata.csv, scripts, and other documents are released under a CC BY-NC-SA 4.0 license.
